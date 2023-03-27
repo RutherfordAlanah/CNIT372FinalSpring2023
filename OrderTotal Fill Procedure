@@ -1,0 +1,34 @@
+update orders set ordertotal=0;
+CREATE OR REPLACE PROCEDURE InsertingToOrderTotal
+    
+AS
+    v_OrderID orders.OrderID%TYPE;
+    v_OrderTotalBefore number:=0;
+    v_OrderTotal number:=0;
+    v_count number;
+    v_currentCount number:=0;
+    
+ 	CURSOR OT IS
+    SELECT ord.OrderID,sum(pro.productprice*oli.QUANTITIY)as Ordertotal,count(ord.OrderID) into v_OrderID, v_OrderTotal,v_count
+        from Products pro
+        inner join ORDERLINEITEM oli
+            on pro.PRODUCTID=oli.PRODUCTID
+        inner join orders ord
+            on ord.orderid=oli.orderid
+        group by ord.OrderID
+        order by ord.orderID;
+    
+	begin
+		FOR current_Order IN OT LOOP
+        	v_OrderID := current_Order.OrderID;
+        	v_OrderTotal := current_Order.Ordertotal;
+            /*v_OrderTotalBefore:= v_OrderTotalBefore+v_OrderTotal;
+            if v_currentCount != v_count then
+                v_OrderTotalBefore
+            else
+                update orders set OrderTotal=v_OrderTotalBefore;*/
+            update orders set OrderTotal=v_OrderTotal where orderid= v_OrderID;
+        end loop;
+END InsertingToOrderTotal;
+/
+exec InsertingToOrderTotal;
