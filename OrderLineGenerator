@@ -1,6 +1,6 @@
 
 
-/*generated the inserts below using the procedure below
+/*generated the inserts below usign the procedure below
 CREATE OR REPLACE PROCEDURE InsertingToOrderLineITem
     
 AS
