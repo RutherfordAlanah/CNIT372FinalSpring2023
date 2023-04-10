@@ -25,7 +25,8 @@ CREATE TABLE PRODUCTS (
     ProductName     varchar2(255) DEFAULT null,
     ProductPrice    number(6,2) DEFAULT null,
     FlavorID        number,
-    ContainerID     number
+    ContainerID     number,
+    FOREIGN key(ContainerID) references CONTAINERS (ContainerID)
 );
 
 CREATE TABLE LOCATIONS (
