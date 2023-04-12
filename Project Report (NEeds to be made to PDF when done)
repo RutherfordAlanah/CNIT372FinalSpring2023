@@ -27,8 +27,8 @@ CONTAINERPRICE	NUMBER (4,2)
 NUMBEROFSCOOPS	NUMBER (2)
 
 
+Flavors table has the flavorID 
 
-products table has the ice cream flabor
 
 
 
@@ -43,7 +43,7 @@ LOCATIONID	NUMBER (15)
 
 
 
-
+Products table has the ice cream flavor
 
 OrderLineItem table 
 
