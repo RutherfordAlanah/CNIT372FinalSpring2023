@@ -17,8 +17,6 @@ EMAIL	VARCHAR2 (255)
 PHONE	VARCHAR2 (255)
 
 
-
-
 Containers table is a table that has a container id and the price of the container 
 
 CONTAINERID	NUMBER
@@ -27,9 +25,11 @@ CONTAINERPRICE	NUMBER (4,2)
 NUMBEROFSCOOPS	NUMBER (2)
 
 
-Flavors table has the flavorID 
+Flavors table has the flavorID as a PK and the price of the flavor
 
-
+FLAVORID	NUMBER
+FLAVORNAME	VARCHAR2 (255)
+PRICEPERSCOOP	NUMBER (4,2)
 
 
 CustomerID from Customers and locationid from locations are FOREIGN keys in the Orders table which includes
@@ -43,10 +43,21 @@ LOCATIONID	NUMBER (15)
 
 
 
-Products table has the ice cream flavor
+Products table has the ice cream flavorid and the containerid as forign keys
 
-OrderLineItem table 
+PRODUCTID	NUMBER
+PRODUCTNAME	VARCHAR2 (255)
+PRODUCTPRICE	NUMBER (6,2)
+FLAVORID	NUMBER
+CONTAINERID	NUMBER
 
+
+OrderLineItem table has orderid and productid as forign keys
+
+ORDERLINE	NUMBER
+ORDERID	NUMBER (8)
+PRODUCTID	NUMBER (8)
+QUANTITIY	NUMBER (2)
 
 
 
