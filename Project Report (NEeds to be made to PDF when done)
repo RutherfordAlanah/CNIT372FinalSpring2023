@@ -3,13 +3,13 @@ Database Description: describe the tables and the columns in each table, and the
 
 we have 7 tables overall
 
-we have locations table which has 3 locations we made up into a table
+we have Locations table which has 3 locations we made up into a table
 ORDERLINE	NUMBER
 ORDERID	NUMBER (8)
 PRODUCTID	NUMBER (8)
 QUANTITIY	NUMBER (2)
 
-next we have the customers table which has 
+next we have the Customers table which has 
 CUSTOMERID	NUMBER
 FIRSTNAME	VARCHAR2 (255)
 LASTNAME	VARCHAR2 (255)
@@ -17,9 +17,35 @@ EMAIL	VARCHAR2 (255)
 PHONE	VARCHAR2 (255)
 
 
-CustomerID from Customers and locationid from locations are FOREIGN keys in the orders table which 
 
 
+Containers table is a table that has a container id and the price of the container 
+
+CONTAINERID	NUMBER
+CONTAINERNAME	VARCHAR2 (255)
+CONTAINERPRICE	NUMBER (4,2)
+NUMBEROFSCOOPS	NUMBER (2)
+
+
+
+products table has the ice cream flabor
+
+
+
+CustomerID from Customers and locationid from locations are FOREIGN keys in the Orders table which includes
+
+ORDERID	NUMBER 
+ORDERDATE	DATE 
+ORDERTOTAL	NUMBER (6,2)
+PAYMENTTYPE	VARCHAR2 (255)
+CUSTOMERID	NUMBER (15)
+LOCATIONID	NUMBER (15)
+
+
+
+
+
+OrderLineItem table 
 
 
 
