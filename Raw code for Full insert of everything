@@ -26,7 +26,8 @@ CREATE TABLE PRODUCTS (
     ProductPrice    number(6,2) DEFAULT null,
     FlavorID        number,
     ContainerID     number,
-    FOREIGN key(ContainerID) references CONTAINERS (ContainerID)
+    FOREIGN key(ContainerID) references CONTAINERS (ContainerID),
+    foreign key (flavorID) references Flavors (flavorid)
 );
 
 CREATE TABLE LOCATIONS (
