@@ -1,6 +1,10 @@
 --Which shop is the most popular during the summer of 2022 (June-September)? By how much from the lowest shop? (take the highest and subtract by the lowest one)
 
+/*
+With this data the shop is doing the best can be rewarded and the company might not need to spend as much on advertising on that location
 
+
+*/
 
 create or replace procedure outputinglocationmax
 as 
@@ -44,6 +48,11 @@ Difference between the max and min is:5
 
 --Which one is the least popular during the summer (June-September)?
 
+/*
+The company needs to focus on this shop to ensure they can stop it from struggling and start making money
+
+*/
+
 create or replace procedure outputinglocationmin
 as 
     v_locationName varchar2(200);
@@ -72,6 +81,12 @@ Ocean Beach - Outer Sunset 2
 
 
 --Which type of cone is the most popular and how much do they cost in total?
+
+/*
+This allows the company to know what cones will be the most popular so they could bulk buy them if they wanted to save some money
+*/
+
+
 
 select sum(cont.CONTAINERPRICE*oli.QUANTITIY),cont.containername--, oli.QUANTITIY,cont.CONTAINERPRICE
 from products prod
