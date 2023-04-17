@@ -88,14 +88,14 @@ This allows the company to know what cones will be the most popular so they coul
 
 
 
-select sum(cont.CONTAINERPRICE*oli.QUANTITIY),cont.containername--, oli.QUANTITIY,cont.CONTAINERPRICE
+/*select sum(cont.CONTAINERPRICE*oli.QUANTITIY),cont.containername--, oli.QUANTITIY,cont.CONTAINERPRICE
 from products prod
 inner join orderlineitem oli
     on prod.productid=oli.productid
 inner join containers cont
     on cont.containerid=prod.containerid
 group by cont.containername
-order by sum(cont.CONTAINERPRICE*oli.QUANTITIY) desc;
+order by sum(cont.CONTAINERPRICE*oli.QUANTITIY) desc;*/
 
 create or replace procedure ConeProcedure 
 as
