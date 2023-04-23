@@ -143,6 +143,26 @@ Chicago Loop: 1.95
 */
     
         
+        
+--Trigger when a new order is places.
+/*
+
+CREATE OR REPLACE TRIGGER NEW_CUSTOMER
+    AFTER INSERT ON CUSTOMERS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('A NEW CUSTOMER HAS COME TO THE ICECREAM SHOP');
+END;
+
+INSERT INTO CUSTOMERS VALUES(400100, 'Priyen', 'Shah', 'priyenshah2@gmail.com', '765-413-3314');
+
+/*
+
+Trigger NEW_CUSTOMER compiled
     
+1 row inserted.
+    
+A NEW CUSTOMER HAS COME TO THE ICECREAM SHOP
+
+*/
     
     
