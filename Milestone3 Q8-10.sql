@@ -143,9 +143,9 @@ Chicago Loop: 1.95
 */
     
         
-        
+--What happens when a new customer comes in      
 --Trigger when a new order is places.
-/*
+
 
 CREATE OR REPLACE TRIGGER NEW_CUSTOMER
     AFTER INSERT ON CUSTOMERS
