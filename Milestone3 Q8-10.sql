@@ -33,14 +33,30 @@ BEGIN
         FETCH FLAVOR_COUNT_LIST INTO F_ID, AMOUNT;
     END LOOP;
     
-END;
+END MAX_ORDER_FLAVOR;
 
 EXECUTE MAX_ORDER_FLAVOR();
+
+/* Query Results
+
+Vanilla: 50
+Strawberry: 48
+Birthday Cake: 46
+Cookies N Cream: 44
+Butter Pecan: 39
+Chocolate: 38
+Mint Chocolate Chip: 37
+Chocolate Chip Cookie Dough: 35
+Coffee: 34
+Pistachio: 34
+
+*/
 
 
 --What are the number of scoops sold for each flavor 
 
 /*this question is usefull to calculate the number of scoops sold for each flavor
+to help business design promotional offers
 */
 
 CREATE OR REPLACE PROCEDURE QUANTITY_FLAVOR
@@ -77,6 +93,20 @@ END;
 
 EXECUTE QUANTITY_FLAVOR();
 
+/*
+
+Birthday Cake: 98
+Coffee: 63
+Chocolate Chip Cookie Dough: 68
+Pistachio: 62
+Cookies N Cream: 90
+Butter Pecan: 72
+Mint Chocolate Chip: 70
+Strawberry: 94
+Chocolate: 72
+Vanilla: 99
+
+*/
 
 --What is the average quantity of icecream per order for given location
 /* This statistic can be useful to improve up marketting strategy and promotional offers
@@ -105,6 +135,12 @@ BEGIN
 END;
     
 EXECUTE AVG_QUANTITY_LOCATION();
+
+/*
+Ocean Beach - Outer Sunset: 1.96
+Purdue Campus - PMU: 1.93
+Chicago Loop: 1.95
+*/
     
         
     
